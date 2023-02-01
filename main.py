@@ -1,9 +1,17 @@
 # megoldás
 
-def eredmeny(jatekos_pontjai, gep_pontjai):
-    if jatekos_pontjai > 21:
+def eredmeny(osszeg):
+    pontszamitas(osszeg)
+    if osszeg > 21:
         print("Játékos vesztett!")
-    elif gep_pontjai > 21:
+    elif osszeg > 21:
         print("Gép vesztett!")
+
+
+def pontszamitas(lista):
+    osszeg = 0
+    for i in range(lista):
+        osszeg = osszeg + lista[i]
+    return osszeg
 
 # teszt esetek
