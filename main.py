@@ -3,7 +3,6 @@
 jatekos_lapok = [2, 3, 4]
 gep_lapok = [10, 4, 10]
 # nem érem el jelenleg ezeket
-# ezért nem látok kiírva semmit
 
 
 def eredmeny(jatekos_lapok: [int], gep_lapok: [int], osszeg):
@@ -17,7 +16,7 @@ def eredmeny(jatekos_lapok: [int], gep_lapok: [int], osszeg):
     else:
         print("LEfutott")
 
-# valahogy érd el a
+
 def pontszamitas(lapok: [list]):
     osszeg = 0
     for i in range(len(lapok)):
@@ -25,3 +24,5 @@ def pontszamitas(lapok: [list]):
     return osszeg
 
 # teszt esetek
+
+# nem hívtad meg azért nem irta ki, figyelj jobban
