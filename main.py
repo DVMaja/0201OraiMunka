@@ -1,20 +1,18 @@
 # megoldás
 
-jatekos_lapok = [2, 3, 4]
-gep_lapok = [10, 4, 10]
-# nem érem el jelenleg ezeket
 
-
-def eredmeny(jatekos_lapok: [int], gep_lapok: [int], osszeg):
-    jatekos_pontok: [int] = pontszamitas(osszeg)
-    gep_pontok: [int] = pontszamitas(osszeg)
+def eredmeny(jatekos_lapok: [int], gep_lapok: [int]):
+    jatekos_pontok: [int] = pontszamitas(jatekos_lapok)
+    gep_pontok: [int] = pontszamitas(gep_lapok)
+    kiirando = ""
 
     if jatekos_pontok > 21:
-        print("Játékos vesztett!")
+        kiirando = "Játékos vesztett!"
     elif gep_pontok > 21:
-        print("Gép vesztett!")
+        kiirando = "Gép vesztett!"
     else:
-        print("LEfutott")
+        kiirando = "LEfutott"
+    return kiirando
 
 
 def pontszamitas(lapok: [list]):
@@ -23,6 +21,23 @@ def pontszamitas(lapok: [list]):
         osszeg = osszeg + lapok[i]
     return osszeg
 
-# teszt esetek
 
-# nem hívtad meg azért nem irta ki, figyelj jobban
+# Teszt esetek
+
+def jatekos_vesztett_teszt():
+    jatekos_lista = [6, 4, 8, 9]
+    gep_lista = [6, 4, 11]
+    kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
+    vart_eredmeny = "Játékos vesztett!"
+
+    if kapott_eredmeny == vart_eredmeny:
+        print("A teszt sikeres!")
+    else:
+        print("A teszt megbukott!")
+
+
+def tesztek():
+    jatekos_vesztett_teszt()
+
+
+tesztek()
