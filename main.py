@@ -25,6 +25,19 @@ def pontszamitas(lapok: [list]):
 # Teszt esetek
 
 def jatekos_vesztett_teszt():
+    jatekos_lista = [6, 4, 8, 9]
+    gep_lista = [6, 4, 11]
+    kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
+    vart_eredmeny = "Játékos vesztett!"
+
+    print("\nJátékos vesztett teszt eredményei:")
+    print("1. A teszt sikeres")
+    if kapott_eredmeny == vart_eredmeny:
+        print("A teszt sikeres!")
+    else:
+        print("A teszt megbukott!")
+
+    print("\n2.A teszt sikertelen")
     jatekos_lista = [6, 4, 11]
     gep_lista = [6, 4, 8, 9]
     kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
@@ -41,9 +54,12 @@ def gep_vesztett_teszt():
     gep_lista = [6, 4, 8, 9]
     kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
     vart_eredmeny = "Gép vesztett!"
-
+    print("\nGép vesztett teszt eredménye: ")
+    print("1. A teszt sikeres")
     if kapott_eredmeny == vart_eredmeny:
         print("A teszt sikeres!")
+    elif len(jatekos_lista) == len(gep_lista):
+        print("Egyenlő számú lapjuk van.")
     else:
         print("A teszt megbukott!")
 
