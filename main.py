@@ -22,8 +22,9 @@ def pontszamitas(lapok: [list]):
 
 # Teszt esetek
 # Játékos tesztek
-def jatekos_nyer():
-    jatekos_lista = [6, 4, 8, 2]
+# Nyer
+def jatekos_nyer21_gyel():
+    jatekos_lista = [6, 4, 8, 3]
     gep_lista = [6, 4, 6]
     kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
     vart_eredmeny = "Játékos vesztett!"
@@ -34,6 +35,31 @@ def jatekos_nyer():
         print("A teszt megbukott!\tA játékos nem nyert!")
 
 
+def jatekos_nyer19_keves():
+    jatekos_lista = [6, 4, 9]
+    gep_lista = [6, 4, 6, 2]
+    kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
+    vart_eredmeny = "Játékos vesztett!"
+
+    if kapott_eredmeny != vart_eredmeny:
+        print("A teszt sikeres! \tA játékos nyert!")
+    else:
+        print("A teszt megbukott!\tA játékos nem nyert!")
+
+
+def jatekos_nyer19_tobb():
+    jatekos_lista = [8, 5, 2, 2, 2]
+    gep_lista = [6, 4, 6]
+    kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
+    vart_eredmeny = "Játékos vesztett!"
+
+    if kapott_eredmeny != vart_eredmeny:
+        print("A teszt sikeres! \tA játékos nyert!")
+    else:
+        print("A teszt megbukott!\tA játékos nem nyert!")
+
+
+# Veszít
 def jatekos_veszit_21tul():
     jatekos_lista = [6, 4, 8, 9]
     gep_lista = [6, 4, 11]
@@ -59,8 +85,9 @@ def jatekos_veszit_gepNy():
 
 
 # Gép tesztek
-def gep_nyer():
-    jatekos_lista = [6, 4, 6, 10]
+# Nyer
+def gep_nyer21_gyel():
+    jatekos_lista = [6, 4, 6, 5]
     gep_lista = [6, 4, 6]
     kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
     vart_eredmeny = "Gép vesztett!"
@@ -71,6 +98,31 @@ def gep_nyer():
         print("A teszt megbukott!\tGép nem nyer!")
 
 
+def gep_nyer19_keves():
+    jatekos_lista = [6, 4, 6, 2]
+    gep_lista = [6, 4, 9]
+    kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
+    vart_eredmeny = "Gép vesztett!"
+
+    if kapott_eredmeny != vart_eredmeny:
+        print("A teszt sikeres! \tGép nyer, játékos nem nyert!")
+    else:
+        print("A teszt megbukott!\tGép nem nyer!")
+
+
+def gep_nyer19_tobb():
+    jatekos_lista = [6, 4, 6]
+    gep_lista = [8, 5, 2, 2, 2]
+    kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
+    vart_eredmeny = "Gép vesztett!"
+
+    if kapott_eredmeny != vart_eredmeny:
+        print("A teszt sikeres! \tGép nyer, játékos nem nyert!")
+    else:
+        print("A teszt megbukott!\tGép nem nyer!")
+
+
+# Veszít
 def gep_veszit_21tul():
     jatekos_lista = [6, 4, 11]
     gep_lista = [6, 4, 8, 9]
@@ -96,7 +148,7 @@ def gep_veszit_jatekosNy():
 
 
 # Döntetlen tesztek
-def dontetlen():
+def dontetlen_egyenlo_lsz_ertek():
     jatekos_lista = [6, 4, 8]
     gep_lista = [6, 4, 8]
     kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
@@ -109,7 +161,7 @@ def dontetlen():
         print("A teszt megbukott!\tNem teljes döntetlen")
 
 
-def dontetlen_mindeni_veszit():
+def dontetlen_21tullepve():
     jatekos_lista = [6, 4, 6, 10]
     gep_lista = [6, 4, 6, 10]
     kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
@@ -125,7 +177,7 @@ def dontetlen_mindeni_veszit():
 # Mindenki nyer
 
 
-def mindenki_nyer():
+def dontetlen_21():
     jatekos_lista = [6, 4, 6, 5]
     gep_lista = [6, 4, 6, 5]
     kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
@@ -140,17 +192,25 @@ def mindenki_nyer():
 
 
 def tesztek():
-    # 9 teszt kb
-    jatekos_nyer()
+    # Játékos tesztek
+    jatekos_nyer21_gyel()
+    jatekos_nyer19_keves()
+    jatekos_nyer19_tobb()
+
     jatekos_veszit_21tul()
     jatekos_veszit_gepNy()
 
-    gep_nyer()
+    # Gép tesztek
+    gep_nyer21_gyel()
+    gep_nyer19_keves()
+    gep_nyer19_tobb()
+
     gep_veszit_21tul()
     gep_veszit_jatekosNy()
 
-    dontetlen()
-    dontetlen_mindeni_veszit()
+    # Döntetlen tesztek
+    dontetlen_egyenlo_lsz_ertek()
+    dontetlen_21tullepve()
+    dontetlen_21()
 
-    mindenki_nyer()
 tesztek()
